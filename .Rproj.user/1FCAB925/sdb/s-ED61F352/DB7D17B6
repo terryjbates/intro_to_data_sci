@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1431493234501.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "DB7D17B6",
+    "lastKnownWriteTime" : 7090484486580094720,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "Berkeley",
+        "contentUrl" : "content?title=Berkeley&file=6aad32f8c4b5414f9330f7510aa09497.htm",
+        "displayedObservations" : 24,
+        "displayedVariables" : 4,
+        "totalObservations" : 24,
+        "variables" : 4
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
