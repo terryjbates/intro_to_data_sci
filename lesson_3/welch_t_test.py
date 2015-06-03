@@ -38,4 +38,12 @@ def compare_averages(filename):
     
     left_cohort = baseball_data[baseball_data.handedness == "L"]
     right_cohort = baseball_data[baseball_data.handedness == "R"]
-    return_tuple = scipy.stats.ttest_ind(right_cohort, left_cohort, equal_var=False)
+    return_tuple = scipy.stats.ttest_ind(list(right_cohort), list(left_cohort), equal_var=False)
+
+    # Less than Pcritical means we reject NULL Hypothesis (False)
+    # Else, we cannot reject NULL hypothesis (True)
+    if return_tuple[1] > 0.5:
+        return (True, return_tuple)
+    return (False, return_tuple)
+
+    
