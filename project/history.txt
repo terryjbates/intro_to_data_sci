@@ -1,0 +1,163 @@
+turnstile_weather = pd.read_csv('lesson_3/turnstile_data_master_with_weather.csv')
+import pandas as pd
+from ggplot import *
+from pandas import *
+turnstile_weather = pd.read_csv('lesson_3/turnstile_data_master_with_weather.csv')
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram()
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=500)
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=10000)
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=1000)
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=1)
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=1000)
+print(p)
+help(geom_histogram)
+help(xlim)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=1000) + xlim(20000)
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram() + xlim(20000)
+print(p)
+help(xlim)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram() + xlim(0, 20000)
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=1000) + xlim(0, 15000)
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=250) + xlim(0, 15000)
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=5000) + xlim(0, 10000)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=500) + xlim(0, 10000)
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly', color='rain')) + geom_histogram(binwidth=500) + xlim(0, 10000)
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=500) + xlim(0, 8000) + facet_grid('rain')
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=500) + xlim(0, 5000) + facet_grid('rain')
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=500) + xlim(0, 5500) + facet_grid('rain')
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=250) + xlim(0, 5500) + facet_grid('rain')
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=250) + xlim(0, 5500) + facet_grid('rain') + labs('Entries Per Hour', 'Frequency') + ggtitle("Histogram of Hourly Subway Entries")
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly')) + geom_histogram(binwidth=250) + xlim(0, 5500) + facet_grid('rain') + labs('Entries Per Hour', 'Frequency') + ggtitle("Histogram of Hourly Subway Entries: Rainy vs. Non-Rainy Days")
+print(p)
+p = ggplot(turnstile_weather, aes(x='ENTRIESn_hourly', color='rain')) + geom_histogram(binwidth=250) + xlim(0, 5500) + facet_grid('rain') + labs('Entries Per Hour', 'Frequency') + ggtitle("Histogram of Hourly Subway Entries: Rainy vs. Non-Rainy Days") + theme_seaborn()
+print(p)
+ plot = ggplot(turnstile_weather, aes(x='mintempi', y='ENTRIESn_hourly',color='UNIT' )) + geom_point()   + xlab("Min Temperature") + ylab("Hourly Entries")
+ plot = ggplot(turnstile_weather, aes(x='mintempi', y='ENTRIESn_hourly',shape='UNIT' )) + geom_point()   + xlab("Min Temperature") + ylab("Hourly Entries")
+print(plot)
+turnstile_weather.columns.name
+turnstile_weather.columns.names
+turnstile_weather.columns
+ plot = ggplot(turnstile_weather, aes(x='thunder', y='ENTRIESn_hourly',shape='UNIT' )) + geom_point()   + xlab("Min Temperature") + ylab("Hourly Entries")
+print(plot)
+turnstile_weather.DATEn.head
+pwd
+cd lesson_4
+import date_to_weekday
+import date_to_weekday
+turnstile_weather['DATEn'].head
+date_to_weekday(turnstile_weather['DATEn'].head)
+foo_df = turnstile_weather[date_to_weekday.date_to_weekday('DATEn')]
+foo_df = turnstile_weather['DATEn']
+foo_df.toupper()
+foo_df.str.upper()
+foo_df.str.len()
+foo_df.str.replace("-","--")
+import datetime
+datetime.datetime("
+datetime.datetime("2011-05-01")
+datetime.datetime(int("2011-05-01"))
+foo_df.apply(date_to_weekday.date_to_weekday)
+turnstile_weather['weekday'] = foo_df.apply(date_to_weekday.date_to_weekday)
+ plot = ggplot(turnstile_weather, aes(x='weekday', y='ENTRIESn_hourly', color='weekday' )) + geom_point()   + xlab("Day of Week: Monday=0, Sunday=6") + ylab("Hourly Entries") + theme_seaborn()
+print(plot)
+ plot = ggplot(turnstile_weather, aes(x='weekday', y='ENTRIESn_hourly', color='weekday' )) + geom_point()   + xlab("Day of Week: Monday=0, Sunday=6") + ylab("Hourly Entries") + theme_seaborn() + ggtitle("Entries per hour vs Day of Week")
+print(plot)
+ plot = ggplot(turnstile_weather, aes(x='weekday', y='ENTRIESn_hourly' )) + geom_point()   + xlab("Day of Week: Monday=0, Sunday=6") + ylab("Hourly Entries") + theme_seaborn() + ggtitle("Entries per hour vs Day of Week")
+print(plot)
+turnstile_weather.groupby('weekday').sum()
+turnstile_weather.groupby('weekday').sum().['ENTRIES_hourly']
+turnstile_weather.groupby('weekday').sum()['ENTRIES_hourly']
+type(turnstile_weather.groupby('weekday').sum())
+turnstile_weather.groupby('weekday').sum().ENTRIESn_hourly
+weekday_sum_df = turnstile_weather.groupby('weekday').sum().ENTRIESn_hourly
+turnstile_weather.weekday_sums =
+turnstile_weather.weekday_sums =
+turnstile_weather.weekday_sums = turnstile_weather.groupby('weekday').sum().ENTRIESn_hourly
+ plot = ggplot(turnstile_weather, aes(x='weekday', y='ENTRIESb', color='weekday' )) + geom_point()   + xlab("Day of Week: Monday=0, Sunday=6") + ylab("Hourly Entries") + theme_seaborn() + ggtitle("Entries per hour vs Day of Week")
+history
+weekday_plot =
+weekday_plot =\
+ggplot(turnstile_weather, aes(x='weekday',\
+y='weekday_sums', color='weekday'))\
++ geom_bar()
+weekday_plot =\
+ggplot(turnstile_weather, aes('weekday_sums', color='weekday'))\
++ geom_bar()
+turnstile_weather.columns.names
+turnstile_weather.columns.name
+turnstile_weather.columns.names
+turnstile_weather.columns
+weekday_sum_df = turnstile_weather.groupby('weekday').sum().ENTRIESn_hourly
+weekday_sum_df
+weekday_plot = ggplot(weekday_sum_df, aes('ENTRIESn_hourly'))
+weekday_sum_df.values
+type(weekday_sum_df.values)
+turnstile_weather['weekday_sums'] = weekday_sum_df
+p = ggplot(turnstile_weather, aes('weekday_sums))
+p = ggplot(turnstile_weather, aes('weekday_sums'))
+p + geom_bar()
+p = ggplot(turnstile_weather, aes(y='weekday_sums', x='weekday'))
+p + geom_bar()
+p = ggplot(turnstile_weather, aes(y='weekday_sums', x='weekday')) + geom_point()
+print(p)
+weekday_sum_df
+weekday_sum_df
+weekday_sum_df['weekdays'] = [0, 1 , 2, 3, 4, 5, 6]
+weekday_sum_df['sums'] = turnstile_weather['weekday_sums']
+weekday_sum_df
+weekday_sum_df['weekdays']
+del(weekday_sum_df['weekdays'])
+weekday_sum_df['weekdays']
+ turnstile_weather.weekday
+ turnstile_weather.weekday.unique
+ turnstile_weather.weekday.sort.unique
+weekday_sum_df['weekdays']  = pd.Series(list(range(len(weekday_sum_df))))
+weekday_sum_df
+p = ggplot(weekday_sum_df, aes('sums')) + geom_bar()
+print(p)
+p = ggplot(weekday_sum_df, aes(x='weekdays', y='sums')) + geom_point()
+print(p)
+p = ggplot(weekday_sum_df, aes(x='weekdays', y='sums')) + geom_bar()
+print(p)
+p = ggplot(weekday_sum_df, aes('weekdays', weight='sums')) + geom_bar()
+print(p)
+p = ggplot(weekday_sum_df, aes('weekdays', weight='sums')) + geom_bar() + lab("Weekdays, Monday=0, Sunday=1","Hourly Entries"),
+history
+p = ggplot(weekday_sum_df, aes('weekdays', weight='sums'))\
++ geom_bar()\
++xlab("Day of Week: Monday=0, Sunday=6")\
++ylab("Sum of Hourly Entries") \
+scale_y_continuous(labels='comma')\
+p = ggplot(weekday_sum_df, aes('weekdays', weight='sums'))\
++ geom_bar()\
++xlab("Day of Week: Monday=0, Sunday=6")\
++ylab("Sum of Hourly Entries") \
++scale_y_continuous(labels='comma')\
++ggtitle("Sum of Hourly Entries by Weekday")\
++theme_seaborn()
+print(p)
+history
+no_rain_df_rain = turnstile_weather[turnstile_weather['rain'] == 0]
+rain_df_rain = turnstile_weather[turnstile_weather['rain'] == 1]
+no_rain_df_rain.groupby.sum()['ENTRIESn_hourly']
+no_rain_df_rain.sum()['ENTRIESn_hourly']
+rain_df_rain.sum()['ENTRIESn_hourly']
+no_rain_df_rain.count
+rain_df_rain.count
+history
