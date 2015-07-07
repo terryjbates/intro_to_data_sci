@@ -1,1 +1,3 @@
-R2 is a measure of how well our model fits the data. More specifically, how wel
+R2 is a measure of how well our model fits the data. More specifically, how closely the data fits our regression line.
+
+Tangibly, it is how much of the variance within our data can be explained by our model. In theory, as the value of R2 approaches 1,  the variance we find in the data can be explained by our model should approach 100% and all of the data points observed should fall along the regression line. 
