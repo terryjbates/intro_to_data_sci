@@ -1,0 +1,1 @@
+R2 is a measure of how well our model fits the data. More specifically, how wel
