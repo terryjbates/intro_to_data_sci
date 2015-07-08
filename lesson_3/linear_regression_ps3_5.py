@@ -1,6 +1,8 @@
 import numpy as np
+import pandas as pd
 import pandas
 import statsmodels.api as sm
+import pprint
 
 """
 In this question, you need to:
@@ -19,11 +21,12 @@ def linear_regression(features, values):
     Y = values
     X = features
     X = sm.add_constant(X)
-    model = sm.OLS(Y,X)
+    model = sm.OLS(Y, X)
     results = model.fit()
     #print results.summary()
     intercept, params = results.params[0], results.params[1:]
-    
+    print "Our params"
+    pprint.pprint(params)
     
     return intercept, params
 
@@ -75,3 +78,8 @@ def predictions(dataframe):
     
     predictions = intercept + np.dot(features_array, params)
     return predictions
+
+
+if __name__ == "__main__":
+    turnstile_weather = pd.read_csv('turnstile_data_master_with_weather.csv')
+    predictions(turnstile_weather)
